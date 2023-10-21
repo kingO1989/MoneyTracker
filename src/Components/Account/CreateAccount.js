@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
-import { Button, Input } from "@mui/material";
+import { Button, Input, backdropClasses } from "@mui/material";
+
 import AppContext from "../../Context/AppContext";
+
 
 const CreateAccountForm = (props) => {
     const { accounts, setAccount } = useContext(AppContext);
@@ -10,16 +12,28 @@ const CreateAccountForm = (props) => {
 
 
     function CreateAccount() {
+        var curr = new Date();
+        curr.setDate(curr.getDate() + 3);
+        var currdate = curr.toISOString().substring(0, 10);
+
+        let initialIncome = {
+            amount:balance,
+            date:currdate,
+            note:"Initial deposit",
+            type:"Income",
+          }
         var newAccount = {
             name: name,
-            networth: Number(balance),
+            networth:  0
+             ,
             transactions: [],
-            incomes: [],
+            incomes: [initialIncome],
             expenses: [],
             totalExpense: 0,
             totalIncome: 0,
-            networth: 0,
+     
         }
+        console.log(balance)
 
         setAccount((prev) => [...prev, newAccount]);
     }

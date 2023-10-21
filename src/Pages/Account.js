@@ -3,6 +3,7 @@ import AppContext from "../Context/AppContext";
 import RecentTransactionView from "../Components/Transaction/RecentTransactionView";
 import { TransactionTotalView } from "../Components/Transaction/TransactionTotalView";
 import AddTranactionForm from "../Components/Transaction/AddTransactionForm";
+import AccountsList from "../Components/Account/AccountList";
 import CreateAccountForm from "../Components/Account/CreateAccount";
 import { Button } from "@mui/material";
 
@@ -42,6 +43,11 @@ const Account = () => {
                         ) : ""
                 }
             </div>
+
+            {
+                accounts?<AccountsList/>:""
+            }
+
 
         </>
     );
