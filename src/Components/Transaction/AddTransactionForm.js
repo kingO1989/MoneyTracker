@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../../Context/AppContext";
+import styles from "../../Pages/AllStyles.module.css";
 
 const AddTranactionForm = (props) => {
     const { accounts } = useContext(AppContext);
@@ -25,7 +26,7 @@ const AddTranactionForm = (props) => {
     return (
 
         <>
-            <table>
+            <table className={styles.AddTransactionForm}>
                 <tbody>
                     <tr>
                         <td>From</td><td>

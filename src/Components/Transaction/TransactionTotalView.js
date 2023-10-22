@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import AppContext from "../../Context/AppContext";
+import styles from "../../Pages/AllStyles.module.css";
 
 export const TransactionTotalView = () => {
     const { accounts, expense, income, networth, setNetworth, totalIncome, totalExpenses } = useContext(AppContext);
@@ -13,11 +14,13 @@ export const TransactionTotalView = () => {
     )
 
     return (
-        <>
+        <div className={styles.TransactionTotalView}>
             {accounts ? accounts.map((account) => (
 
 
-                <ul>
+          <div>
+            <h3>Networth</h3>
+                  <ul >
                     <li><h5>{account.name}</h5></li>
                     <li>Total Income ::{
                         account.totalIncome
@@ -30,10 +33,11 @@ export const TransactionTotalView = () => {
                         account.networth
                     }</li>
                 </ul>
+          </div>
 
             )) : ""
             }
-        </>
+        </div>
     )
 
 

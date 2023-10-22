@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import AppContext from "../../Context/AppContext";
 import { Divider, List, ListItem } from "@mui/material";
+import styles from "../../Pages/AllStyles.module.css";
 
 
 export const RecentTransactionView = () => {
@@ -10,7 +11,7 @@ export const RecentTransactionView = () => {
 
     return (
 
-        <>
+        < div className={styles.RecentTransactionView}>
             <h3>Recent Transaction</h3>
 
             <List>
@@ -55,7 +56,7 @@ export const RecentTransactionView = () => {
                 </table>
             </List>
 
-        </>
+        </div>
     );
 
 

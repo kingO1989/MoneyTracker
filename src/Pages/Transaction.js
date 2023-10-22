@@ -9,7 +9,7 @@ import AddTranactionForm from "../Components/Transaction/AddTransactionForm";
 
 const Transaction = () => {
 
-
+ 
     // let transactionContext = useContext(AppContext)
 
 
@@ -17,7 +17,7 @@ const Transaction = () => {
     const { expense, accounts, Addtransaction } = useContext(AppContext);
     const [addTransactionBtnClicked, setAddTransactionBtnClicked] = useState(false)
 
-
+ 
 
     function OpenAddTransactionForm(e) {
         if (accounts.length < 1) {
@@ -35,7 +35,7 @@ const Transaction = () => {
 
 
     return (
-        <>
+        <div>
 
             <div>
                 <h3>Create a Transaction</h3>
@@ -45,14 +45,17 @@ const Transaction = () => {
                 {
                     addTransactionBtnClicked ?
                         (
-                            < AddTranactionForm Addtransaction={Addtransaction} />
+                            < AddTranactionForm   Addtransaction={Addtransaction} />
                         ) : ""
                 }
 
             </div>
-            <RecentTransactionView />
+         
+            <RecentTransactionView  />
+          
+          
             <TransactionTotalView />
-        </>
+        </div>
     )
 
 }
